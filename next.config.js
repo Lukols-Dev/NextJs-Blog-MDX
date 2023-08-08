@@ -23,7 +23,7 @@ const withMDX = require('@next/mdx')({
           protocol: 'https',
           hostname: 'raw.githubusercontent.com',
           port: '',
-          pathname: '/gitdagray/test-blogposts/main/images/**',
+          pathname: '/Lukols-Dev/lukols-blog-posts/main/images/**',
         },
       ],
     },

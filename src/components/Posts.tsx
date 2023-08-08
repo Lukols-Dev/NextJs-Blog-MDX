@@ -13,7 +13,7 @@ const Posts = async() => {
             <ul className="px-4 lg:px-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {posts.map((item:any,index:any)=>(
                 <li key={index} className='mt-4'>
-                <PostCard title={item.title} id={item.id}/>
+                <PostCard title={item.title} id={item.id} image={item.image}/>
                 </li>
             ))}
             </ul>

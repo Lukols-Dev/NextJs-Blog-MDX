@@ -14,7 +14,7 @@ export class MDX {
             const res = await axios.get(`${process.env.NEXT_PUBLIC_POST_RAW_URL}/${fileName}`)
             if (res && res.status !== 200) return null
     
-            const { frontmatter, content } = await compileMDX<{ title: string, date: string, tags: string[] }>({
+            const { frontmatter, content } = await compileMDX<{ title: string, date: string, tags: string[], image:string }>({
                 source: res.data,
                 components: {
                     Video,
@@ -34,7 +34,7 @@ export class MDX {
                 }
             })
             
-            const blogPostObj: any = { meta: { id: fileName.replace(/\.mdx$/, ''), title: frontmatter.title, date: frontmatter.date, tags: frontmatter.tags }, content}
+            const blogPostObj: any = { meta: { id: fileName.replace(/\.mdx$/, ''), title: frontmatter.title, date: frontmatter.date, tags: frontmatter.tags, image: frontmatter.image }, content}
             return blogPostObj
         }catch(err) {
             console.log('Error post name: ', err)
