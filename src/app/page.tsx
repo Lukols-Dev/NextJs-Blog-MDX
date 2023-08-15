@@ -1,7 +1,9 @@
 import { SearchBar } from "@/components/common/SearchBar";
 import Posts from "@/components/Posts";
+import { Page } from "@/types/page.type";
 
-export default function Home() {
+export default function Home(props: Page) {
+  const { searchParams } = props;
   return (
     <section className="mt-6 w-full flex flex-col">
       <div className="w-full min-h-48 h-60 mb-10 px-4 md:px-10 lg:px-32 lg:gap-4 flex items-center bg-gradient-to-r from-violet-600 to-indigo-600">
@@ -17,7 +19,7 @@ export default function Home() {
           <SearchBar />
         </div>
       </div>
-      <Posts />
+      <Posts filter={searchParams.search} />
     </section>
   );
 }

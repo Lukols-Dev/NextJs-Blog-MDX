@@ -60,7 +60,7 @@ export class MDX {
     }
   };
 
-  static getAllPosts = async () => {
+  static getAllPosts = async (searchParams?: string) => {
     try {
       const res = await axios.get(`${process.env.NEXT_PUBLIC_GITHUB_API_URL}`, {
         headers: {
@@ -85,7 +85,15 @@ export class MDX {
           posts.push(meta);
         }
       }
-      return posts.sort((a, b) => (a.date < b.date ? 1 : -1));
+      if (searchParams) {
+        return posts.filter((data) =>
+          data.title
+            .toLowerCase()
+            .includes(searchParams.toString().toLowerCase())
+        );
+      } else {
+        return posts.sort((a, b) => (a.date < b.date ? 1 : -1));
+      }
     } catch (err) {
       console.log("Error all posts: ", err);
       return null;

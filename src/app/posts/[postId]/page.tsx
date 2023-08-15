@@ -16,9 +16,16 @@ export const revalidate = 86400;
 //     }))
 // }
 
+interface PostDetailsProps {
+  params: {
+    postId: string;
+  };
+}
+
 export const generateMetadata = async ({
   params: { postId },
 }: PostDetailsProps) => {
+  console.log(postId);
   const post = await MDX.getPostByName(`${postId}.mdx`);
 
   if (!post) {
@@ -31,12 +38,6 @@ export const generateMetadata = async ({
     title: post.meta.title,
   };
 };
-
-interface PostDetailsProps {
-  params: {
-    postId: string;
-  };
-}
 
 const PostDetails = async ({ params: { postId } }: PostDetailsProps) => {
   const post = await MDX.getPostByName(`${postId}.mdx`);

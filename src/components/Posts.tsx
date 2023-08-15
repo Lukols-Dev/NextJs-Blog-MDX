@@ -2,8 +2,12 @@ import { MDX } from "@/lib/mdx";
 import PostCard from "./common/postCard";
 import { Pagination } from "@mui/material";
 
-const Posts = async () => {
-  const posts = await MDX.getAllPosts();
+interface PostProps {
+  filter?: string;
+}
+
+const Posts = async ({ filter }: PostProps) => {
+  const posts = await MDX.getAllPosts(filter);
 
   if (!posts) {
     return <p className="mt-10 text-center">Sorry, no posts available.</p>;
