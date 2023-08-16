@@ -1,34 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NextNinja Blog - NextJS 13v
+[![My Skills](https://skillicons.dev/icons?i=ts,react,nextjs,tailwind,md)](https://skillicons.dev)
 
-## Getting Started
+![image](https://github.com/Lukols-Dev/NextJs-Blog-MDX/assets/57043892/fd331202-3deb-4bb3-82e0-97dd7544ad6d)
 
-First, run the development server:
+## Website
+https://www.nextninja.pl/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Introduction
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**NextNinja** is a cutting-edge blog built on the Next.js framework, combining the speed and efficiency of this platform with sleek and responsive design. Inspired by the stealth and agility of a ninja, this project was crafted for tech enthusiasts, developers, and anyone seeking a robust platform to share their thoughts and insights online.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. **Swift Performance**: Harnessing the power of Next.js, the site loads at ninja-speed, ensuring an excellent user experience.
+2. **SEO-friendly**: Stealthily optimized for SEO structures, ensuring your content gets the visibility it deserves in search engines.
+3. **Responsive**: Designed with precision to look outstanding on all devices, from smartphones to large screens, just like a ninja adapting to any environment.
+4. **Intuitive Admin Panel**: Facilitating seamless management of posts, categories, and comments, giving you the ninja-like control you need.
