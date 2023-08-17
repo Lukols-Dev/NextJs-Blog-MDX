@@ -35,14 +35,17 @@ export class MDX {
             rehypePlugins: [
               rehypeHighlight,
               rehypeSlug,
-              // [rehypeAutolinkHeadings, {
-              //     behavior: 'wrap'
-              // }],
+              // [
+              //   rehypeAutolinkHeadings,
+              //   {
+              //     behavior: "wrap",
+              //   },
+              // ],
             ],
           },
         },
       });
-
+      const contentsTable = getHeadings(res.data);
       const blogPostObj: any = {
         meta: {
           id: fileName.replace(/\.mdx$/, ""),
@@ -50,6 +53,7 @@ export class MDX {
           date: frontmatter.date,
           tags: frontmatter.tags,
           image: frontmatter.image,
+          tableContents: contentsTable,
         },
         content,
       };
@@ -100,3 +104,29 @@ export class MDX {
     }
   };
 }
+
+//Get all headings from MDX content
+const getHeadings = (source: any) => {
+  if (!source) return [];
+  const regex = /## (.*)/g;
+
+  if (source.match(regex)) {
+    return source.match(regex).map((heading: any) => {
+      const headingText = heading.replace("## ", "").replace(/[:!?]+$/, "");
+
+      const link =
+        "#" +
+        headingText
+          .replace(/[()?!.,;:]/g, "")
+          .replace(/\s+/g, "-")
+          .toLowerCase();
+
+      return {
+        text: headingText,
+        link,
+      };
+    });
+  }
+
+  return [];
+};

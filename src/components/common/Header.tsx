@@ -1,4 +1,17 @@
+type Heading = {
+  id: string;
+  children: string;
+};
+
 export const Heading = {
-  H1: ({ children }: any) => <h1 className="text-2xl font-bold">{children}</h1>,
-  H2: ({ children }: any) => <h2 className="text-xl font-bold">{children}</h2>,
+  H1: (props: Heading) => (
+    <h1 id={props.id} className="text-2xl font-bold">
+      {props.children}
+    </h1>
+  ),
+  H2: (props: Heading) => (
+    <h2 id={props.id} className="text-xl font-bold">
+      {props.children}
+    </h2>
+  ),
 };

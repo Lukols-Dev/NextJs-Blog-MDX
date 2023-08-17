@@ -16,11 +16,6 @@ export const SearchBar = () => {
   const clickSearch = () => {
     if (!query) router.push("/");
     router.push(`?search=${query}`);
-
-    /**TODO:
-     * Feature:
-     * Add redux reducer for global search icon by id element container
-     */
   };
 
   // onKeyDown handler function

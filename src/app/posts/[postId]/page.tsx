@@ -2,6 +2,7 @@ import { MDX } from "@/lib/mdx";
 import Link from "next/link";
 import "highlight.js/styles/github-dark.css";
 import { getFormattedDate } from "@/lib/getFormattedDate";
+import { BtnScrollTo } from "@/components/common/BtnScrollTo";
 
 //frequency for read data 86400s
 export const revalidate = 86400;
@@ -25,7 +26,6 @@ interface PostDetailsProps {
 export const generateMetadata = async ({
   params: { postId },
 }: PostDetailsProps) => {
-  console.log(postId);
   const post = await MDX.getPostByName(`${postId}.mdx`);
 
   if (!post) {
@@ -68,6 +68,15 @@ const PostDetails = async ({ params: { postId } }: PostDetailsProps) => {
           ← Back to home
         </Link>
       </div>
+      {meta.tableContents.length > 0 ? (
+        <aside className="min-w-[250px] h-fit max-h-1/2 p-4 gap-2 ml-4 hidden lg:flex lg:flex-col overflow-x-hidden overflow-y-scroll rounded-lg lg:sticky top-20 right-0 border-2 border-grey">
+          {meta.tableContents.map((item: any, index: any) => (
+            <BtnScrollTo id={index} href={item.link} text={item.text} />
+          ))}
+        </aside>
+      ) : (
+        <></>
+      )}
     </section>
   );
 };
