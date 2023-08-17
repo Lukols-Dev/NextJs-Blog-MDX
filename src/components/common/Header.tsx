@@ -1,6 +1,6 @@
 type Heading = {
-  id: string;
-  children: string;
+  id: string | undefined;
+  children: string | undefined;
 };
 
 export const Heading = {
