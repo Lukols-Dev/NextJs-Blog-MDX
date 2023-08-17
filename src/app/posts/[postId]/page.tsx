@@ -71,7 +71,12 @@ const PostDetails = async ({ params: { postId } }: PostDetailsProps) => {
       {meta.tableContents.length > 0 ? (
         <aside className="min-w-[250px] h-fit max-h-1/2 p-4 gap-2 ml-4 hidden lg:flex lg:flex-col overflow-x-hidden overflow-y-scroll rounded-lg lg:sticky top-20 right-0 border-2 border-grey">
           {meta.tableContents.map((item: any, index: any) => (
-            <BtnScrollTo id={index} href={item.link} text={item.text} />
+            <BtnScrollTo
+              key={index}
+              id={index}
+              href={item.link}
+              text={item.text}
+            />
           ))}
         </aside>
       ) : (
