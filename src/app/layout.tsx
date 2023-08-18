@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/navigation/navbar";
 import Footer from "@/components/footers/footer";
 import { StyledEngineProvider } from "@mui/material";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Next Ninja • Zostań mistrzem Next.js",
@@ -26,6 +27,7 @@ export default function RootLayout({
           <main className="w-full mt-24">{children}</main>
           <Footer />
         </StyledEngineProvider>
+        <Analytics />
       </body>
     </html>
   );
