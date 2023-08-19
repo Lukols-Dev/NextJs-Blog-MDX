@@ -12,6 +12,17 @@ const config = {
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
   testEnvironment: "jest-environment-jsdom",
   preset: "ts-jest",
+  transform: {
+    "^.+\\.(js|jsx|ts|tsx)$": "babel-jest",
+  },
+  moduleNameMapper: {
+    "^next-mdx-remote(.*)$": "<rootDir>/__mocks__/next-mdx-remote.js",
+    "^rehype-highlight(.*)$": "<rootDir>/__mocks__/rehype-highlight.js",
+    "^rehype-slug(.*)$": "<rootDir>/__mocks__/rehype-slug.js",
+  },
+  transformIgnorePatterns: [
+    "node_modules/(?!(next-mdx-remote|rehype-highlight|rehype-slug)/)",
+  ],
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async

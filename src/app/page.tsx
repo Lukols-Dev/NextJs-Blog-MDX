@@ -19,7 +19,7 @@ export default function Home(props: Page) {
           <SearchBar />
         </div>
       </div>
-      <Posts filter={searchParams.search} />
+      {/* <Posts filter={searchParams.search} /> */}
     </section>
   );
 }
